@@ -17,6 +17,12 @@ const timeline = [
     color: '#E8B4B8',
   },
   {
+    period: 'MSc, 2024',
+    title: 'The Human Firewall',
+    description: 'MSc in Cybersecurity Project Management at Royal Holloway. Dissertation on strengthening cybersecurity in healthcare through project manager training. The bridge between clinical science and security — and the first time the research question became explicit.',
+    color: '#c084fc',
+  },
+  {
     period: 'Professional',
     title: 'Cybersecurity Project Management',
     description: 'Managing security initiatives at scale. Learned that the biggest vulnerabilities are human, not technical.',
