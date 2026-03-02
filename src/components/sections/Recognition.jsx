@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Trophy, MapPin, Calendar } from 'lucide-react'
+import { Trophy, MapPin, Calendar, FileText } from 'lucide-react'
 import GlassCard from '../ui/GlassCard'
 import SectionHeading from '../ui/SectionHeading'
 
@@ -40,6 +40,42 @@ export default function Recognition() {
                 </h3>
                 <p className="text-foreground-dim text-sm">
                   {scholarship.issuer} &middot; {scholarship.date}
+                </p>
+              </div>
+            </div>
+          </GlassCard>
+        </motion.div>
+
+        {/* AI Manifesto */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-8"
+        >
+          <GlassCard hover={false} className="p-6 border-sage/25">
+            <div className="flex items-start gap-4">
+              <div className="p-2 rounded-lg bg-sage/15 text-sage-dark shrink-0 mt-0.5">
+                <FileText size={20} />
+              </div>
+              <div>
+                <h3 className="font-serif text-lg font-medium text-foreground mb-1">
+                  King's Student AI Manifesto — Co-Signatory
+                </h3>
+                <p className="text-foreground-muted text-sm leading-relaxed mb-1">
+                  Co-created institutional AI policy document shaping King's College London's approach to AI in education. Covers integrity, adaptability, ethics, and student-staff collaboration.
+                </p>
+                <p className="text-foreground-dim text-xs">
+                  KCLSU &middot; King's College London &middot; Jan 2026 &middot;{' '}
+                  <a
+                    href="https://www.kclsu.org/resources/kclsu/AI-MANIFESTO/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sage-dark hover:underline"
+                  >
+                    Read manifesto
+                  </a>
                 </p>
               </div>
             </div>
