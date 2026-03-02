@@ -20,6 +20,7 @@ const timeline = [
     period: 'MSc, 2024',
     title: 'The Human Firewall',
     description: 'MSc in Cybersecurity Project Management at Royal Holloway. Dissertation on strengthening cybersecurity in healthcare through project manager training. The bridge between clinical science and security — and the first time the research question became explicit.',
+    link: { href: '/the-human-firewall-thesis.pdf', label: 'Read thesis' },
     color: '#c084fc',
   },
   {
@@ -77,6 +78,16 @@ export default function Journey() {
                 <p className="text-foreground-dim text-xs tracking-wide uppercase mb-1">{item.period}</p>
                 <h3 className="font-serif text-lg font-medium text-foreground mb-2">{item.title}</h3>
                 <p className="text-foreground-muted text-sm leading-relaxed">{item.description}</p>
+                {item.link && (
+                  <a
+                    href={item.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-sage-dark text-sm font-medium hover:underline"
+                  >
+                    {item.link.label} &rarr;
+                  </a>
+                )}
                 {item.quote && (
                   <p className="text-foreground-dim text-sm italic mt-3 pl-4 border-l-2 border-pink/30">{item.quote}</p>
                 )}
