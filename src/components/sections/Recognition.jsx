@@ -83,6 +83,7 @@ export default function Recognition() {
         </motion.div>
 
         {/* Conferences */}
+        <h3 className="font-serif text-lg font-medium text-foreground mb-4">Conferences</h3>
         <div className="grid sm:grid-cols-3 gap-4">
           {conferences.map((conf, i) => (
             <motion.div
