@@ -13,6 +13,7 @@ const conferences = [
   { name: 'Black Hat Europe 2025', date: 'Dec 2025', location: 'London' },
   { name: 'BETT UK 2026', date: 'Jan 2026', location: 'London' },
   { name: 'AI & Big Data Expo Global', date: 'Feb 2026', location: 'Olympia London' },
+  { name: 'Infosecurity Europe 2026', date: 'Jun 2026', location: 'ExCeL London' },
 ]
 
 export default function Recognition() {
@@ -84,7 +85,7 @@ export default function Recognition() {
 
         {/* Conferences */}
         <h3 className="font-serif text-lg font-medium text-foreground mb-4">Conferences</h3>
-        <div className="grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {conferences.map((conf, i) => (
             <motion.div
               key={conf.name}
