@@ -1,4 +1,5 @@
 import Hero from '../components/sections/Hero'
+import Thesis from '../components/sections/Thesis'
 import About from '../components/sections/About'
 import Now from '../components/sections/Now'
 import Journey from '../components/sections/Journey'
@@ -12,6 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Thesis />
       <About />
       <Now />
       <Journey />
