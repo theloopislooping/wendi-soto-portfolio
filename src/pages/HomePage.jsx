@@ -3,6 +3,7 @@ import About from '../components/sections/About'
 import Now from '../components/sections/Now'
 import Journey from '../components/sections/Journey'
 import Writing from '../components/sections/Writing'
+import Recognition from '../components/sections/Recognition'
 import Projects from '../components/sections/Projects'
 import Skills from '../components/sections/Skills'
 import Contact from '../components/sections/Contact'
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Now />
       <Journey />
       <Writing />
+      <Recognition />
       <Projects />
       <Skills />
       <Contact />
