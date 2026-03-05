@@ -1,12 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 import {
   Shield, Users, Radio, Palette, Timer, Network,
   BookOpen, Brain, Layers, GitBranch, ShieldAlert, Sparkles,
   ClipboardList, FlaskConical, Radar, TrendingUp, Building2, MessageSquareText,
   Landmark, Heart, Smartphone, AlertTriangle, CreditCard,
-  ArrowLeft, ArrowRight, ExternalLink,
+  ArrowLeft, ArrowRight, ExternalLink, ChevronLeft, ChevronRight,
 } from 'lucide-react'
 import GlassCard from '../components/ui/GlassCard'
 import TechBadge from '../components/ui/TechBadge'
@@ -23,11 +23,16 @@ export default function ProjectPage({ project }) {
   const idx = projects.findIndex((p) => p.slug === project.slug)
   const prev = idx > 0 ? projects[idx - 1] : null
   const next = idx < projects.length - 1 ? projects[idx + 1] : null
+  const [activeShot, setActiveShot] = useState(0)
 
   useEffect(() => {
     document.title = `${project.title} — Wendi Kimberli`
     return () => { document.title = 'Wendi Kimberli' }
   }, [project.title])
+
+  useEffect(() => {
+    setActiveShot(0)
+  }, [project.slug])
 
   return (
     <div className="pt-20">
@@ -39,10 +44,20 @@ export default function ProjectPage({ project }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div
-              className="w-12 h-1 rounded-full mb-6 opacity-60"
-              style={{ background: project.color }}
-            />
+            <div className="flex items-center gap-3 mb-6">
+              <div
+                className="w-12 h-1 rounded-full opacity-60"
+                style={{ background: project.color }}
+              />
+              {project.badge && (
+                <span
+                  className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide"
+                  style={{ background: project.color + '18', color: project.color }}
+                >
+                  {project.badge}
+                </span>
+              )}
+            </div>
             <h1 className="font-serif text-4xl sm:text-5xl font-medium text-foreground mb-3">
               {project.title}
             </h1>
@@ -67,6 +82,27 @@ export default function ProjectPage({ project }) {
         </div>
       </section>
 
+      {/* Quote */}
+      {project.quote && (
+        <section className="pb-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.blockquote
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <div className="w-8 h-px mx-auto mb-6" style={{ background: project.color + '60' }} />
+              <p className="font-serif text-xl sm:text-2xl font-medium text-foreground italic leading-relaxed">
+                "{project.quote}"
+              </p>
+              <div className="w-8 h-px mx-auto mt-6" style={{ background: project.color + '60' }} />
+            </motion.blockquote>
+          </div>
+        </section>
+      )}
+
       {/* Overview */}
       <section className="pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,11 +114,102 @@ export default function ProjectPage({ project }) {
           >
             <GlassCard hover={false} className="p-8">
               <h2 className="font-serif text-xl font-medium text-foreground mb-4">Overview</h2>
-              <p className="text-foreground-muted leading-relaxed">{project.overview}</p>
+              {project.overview.split('\n\n').map((p, i) => (
+                <p key={i} className={`text-foreground-muted leading-relaxed ${i > 0 ? 'mt-4' : ''}`}>
+                  {p}
+                </p>
+              ))}
             </GlassCard>
           </motion.div>
         </div>
       </section>
+
+      {/* Screenshots */}
+      {project.screenshots?.length > 0 && (
+        <section className="pb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-serif text-2xl font-medium text-foreground mb-8"
+            >
+              Console
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              {/* Main image */}
+              <div className="relative rounded-2xl overflow-hidden border border-sage/15 shadow-lg">
+                {/* Browser chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-2.5 bg-foreground/5 border-b border-sage/10">
+                  <span className="w-2.5 h-2.5 rounded-full bg-pink/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-warm/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-sage/50" />
+                  <span className="ml-3 text-xs text-foreground-dim font-mono">
+                    BridgetOS — {project.screenshots[activeShot].label}
+                  </span>
+                </div>
+
+                <div className="relative bg-foreground/5">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={activeShot}
+                      src={project.screenshots[activeShot].src}
+                      alt={project.screenshots[activeShot].label}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-full block"
+                    />
+                  </AnimatePresence>
+
+                  {/* Arrows */}
+                  {project.screenshots.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => setActiveShot((activeShot - 1 + project.screenshots.length) % project.screenshots.length)}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl glass-heavy flex items-center justify-center text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
+                      <button
+                        onClick={() => setActiveShot((activeShot + 1) % project.screenshots.length)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl glass-heavy flex items-center justify-center text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Thumbnails */}
+              {project.screenshots.length > 1 && (
+                <div className="flex gap-3 mt-4 justify-center">
+                  {project.screenshots.map((shot, i) => (
+                    <button
+                      key={shot.src}
+                      onClick={() => setActiveShot(i)}
+                      className={`rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+                        i === activeShot
+                          ? 'border-sage-dark opacity-100 scale-105'
+                          : 'border-transparent opacity-50 hover:opacity-75'
+                      }`}
+                    >
+                      <img src={shot.src} alt={shot.label} className="w-24 sm:w-32 h-auto block" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Features */}
       <section className="pb-16">

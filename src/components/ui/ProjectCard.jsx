@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import GlassCard from './GlassCard'
 import TechBadge from './TechBadge'
 
-export default function ProjectCard({ slug, title, tagline, description, stack, color }) {
+export default function ProjectCard({ slug, title, tagline, description, stack, color, badge }) {
   return (
     <motion.div
       variants={{
@@ -28,7 +28,17 @@ export default function ProjectCard({ slug, title, tagline, description, stack, 
               className="absolute top-0 left-0 w-full h-1 opacity-40 group-hover:opacity-70 transition-opacity"
               style={{ background: `linear-gradient(90deg, ${color}, transparent)` }}
             />
-            <h3 className="font-serif text-xl font-medium text-foreground mb-1 mt-2">{title}</h3>
+            <div className="flex items-center gap-2 mt-2 mb-1">
+              <h3 className="font-serif text-xl font-medium text-foreground">{title}</h3>
+              {badge && (
+                <span
+                  className="px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide"
+                  style={{ background: color + '18', color }}
+                >
+                  {badge}
+                </span>
+              )}
+            </div>
             <p className="text-sage-dark text-sm font-medium mb-3">{tagline}</p>
             <p className="text-foreground-muted text-sm leading-relaxed mb-4">{description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
