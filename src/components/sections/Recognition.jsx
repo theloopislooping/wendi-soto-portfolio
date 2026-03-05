@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Trophy, MapPin, Calendar, FileText } from 'lucide-react'
+import { Trophy, MapPin, Calendar, FileText, CheckCircle } from 'lucide-react'
 import GlassCard from '../ui/GlassCard'
 import SectionHeading from '../ui/SectionHeading'
 
@@ -9,10 +9,13 @@ const scholarship = {
   date: 'Jan 2026',
 }
 
-const conferences = [
+const attended = [
   { name: 'Black Hat Europe 2025', date: 'Dec 2025', location: 'London' },
   { name: 'BETT UK 2026', date: 'Jan 2026', location: 'London' },
   { name: 'AI & Big Data Expo Global', date: 'Feb 2026', location: 'Olympia London' },
+]
+
+const upcoming = [
   { name: 'Infosecurity Europe 2026', date: 'Jun 2026', location: 'ExCeL London' },
 ]
 
@@ -83,10 +86,44 @@ export default function Recognition() {
           </GlassCard>
         </motion.div>
 
-        {/* Conferences */}
-        <h3 className="font-serif text-lg font-medium text-foreground mb-4">Conferences</h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {conferences.map((conf, i) => (
+        {/* Upcoming conferences */}
+        {upcoming.length > 0 && (
+          <>
+            <h3 className="font-serif text-lg font-medium text-foreground mb-4">Upcoming</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              {upcoming.map((conf, i) => (
+                <motion.div
+                  key={conf.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <GlassCard className="p-5 h-full">
+                    <h4 className="font-serif text-sm font-medium text-foreground mb-3 leading-snug">
+                      {conf.name}
+                    </h4>
+                    <div className="flex flex-col gap-1.5">
+                      <span className="flex items-center gap-1.5 text-foreground-muted text-xs">
+                        <Calendar size={12} className="text-sage-dark shrink-0" />
+                        {conf.date}
+                      </span>
+                      <span className="flex items-center gap-1.5 text-foreground-muted text-xs">
+                        <MapPin size={12} className="text-sage-dark shrink-0" />
+                        {conf.location}
+                      </span>
+                    </div>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Attended conferences */}
+        <h3 className="font-serif text-lg font-medium text-foreground mb-4">Attended</h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {attended.map((conf, i) => (
             <motion.div
               key={conf.name}
               initial={{ opacity: 0, y: 20 }}
@@ -95,16 +132,17 @@ export default function Recognition() {
               transition={{ delay: i * 0.1 }}
             >
               <GlassCard className="p-5 h-full">
-                <h4 className="font-serif text-sm font-medium text-foreground mb-3 leading-snug">
+                <h4 className="font-serif text-sm font-medium text-foreground mb-3 leading-snug flex items-center gap-2">
                   {conf.name}
+                  <CheckCircle size={12} className="text-sage shrink-0" />
                 </h4>
                 <div className="flex flex-col gap-1.5">
                   <span className="flex items-center gap-1.5 text-foreground-muted text-xs">
-                    <Calendar size={12} className="text-sage-dark shrink-0" />
+                    <Calendar size={12} className="text-foreground-dim shrink-0" />
                     {conf.date}
                   </span>
                   <span className="flex items-center gap-1.5 text-foreground-muted text-xs">
-                    <MapPin size={12} className="text-sage-dark shrink-0" />
+                    <MapPin size={12} className="text-foreground-dim shrink-0" />
                     {conf.location}
                   </span>
                 </div>

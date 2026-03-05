@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { PenLine, ArrowUpRight } from 'lucide-react'
+import { PenLine, ArrowUpRight, Clock } from 'lucide-react'
 import GlassCard from '../ui/GlassCard'
 import SectionHeading from '../ui/SectionHeading'
 import { posts } from '../../data/posts'
@@ -36,7 +36,7 @@ export default function Writing() {
                     <p className="text-foreground-muted text-sm leading-relaxed">
                       {post.excerpt}
                     </p>
-                    {post.link && (
+                    {post.link ? (
                       <a
                         href={post.link}
                         target="_blank"
@@ -45,6 +45,11 @@ export default function Writing() {
                       >
                         Read essay <ArrowUpRight size={14} />
                       </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 text-foreground-dim text-xs font-medium mt-3 tracking-wide uppercase">
+                        <Clock size={12} />
+                        Coming soon
+                      </span>
                     )}
                   </div>
                 </div>

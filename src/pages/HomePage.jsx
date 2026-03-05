@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Hero from '../components/sections/Hero'
 import Thesis from '../components/sections/Thesis'
 import About from '../components/sections/About'
@@ -10,6 +11,10 @@ import Skills from '../components/sections/Skills'
 import Contact from '../components/sections/Contact'
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = 'Wendi Kimberli — Founder & PhD Researcher'
+  }, [])
+
   return (
     <>
       <Hero />

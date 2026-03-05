@@ -23,7 +23,7 @@ export default function Navbar() {
   const navRef = useRef(null)
   const itemRefs = useRef({})
   const location = useLocation()
-  const isHome = location.pathname === '/home'
+  const isHome = location.pathname === '/'
   const activeId = useScrollSpy(NAV_ITEMS.map((n) => n.id))
 
   const highlightedId = hoveredId || activeId
@@ -53,7 +53,7 @@ export default function Navbar() {
             Wendi Kimberli
           </a>
         ) : (
-          <Link to="/home" className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors no-underline">
+          <Link to="/" className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors no-underline">
             <ArrowLeft size={14} />
             <span className="font-serif text-base font-medium text-foreground whitespace-nowrap">Wendi Kimberli</span>
           </Link>

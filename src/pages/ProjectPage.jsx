@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
 import {
@@ -22,6 +23,11 @@ export default function ProjectPage({ project }) {
   const idx = projects.findIndex((p) => p.slug === project.slug)
   const prev = idx > 0 ? projects[idx - 1] : null
   const next = idx < projects.length - 1 ? projects[idx + 1] : null
+
+  useEffect(() => {
+    document.title = `${project.title} — Wendi Kimberli`
+    return () => { document.title = 'Wendi Kimberli' }
+  }, [project.title])
 
   return (
     <div className="pt-20">
@@ -179,7 +185,7 @@ export default function ProjectPage({ project }) {
             ) : <div />}
 
             <Link
-              to="/home#projects"
+              to="/#projects"
               className="text-foreground-dim hover:text-foreground transition-colors text-sm no-underline"
             >
               All Projects
