@@ -7,12 +7,6 @@ export const projects = [
     description: 'The enforcement layer for recursive identity in agentic AI systems. Detects behavioral drift, enforces governance policies, and maintains verifiable agent identity.',
     overview: `Autonomous AI agents don't fail by hallucinating — they fail by drifting. An agent deployed today is not the same agent operating in thirty days. For a system that executes code, writes to databases, and takes real-world actions, that's not a quality problem — it's a governance failure.\n\nBridgetOS is a complete governance stack for autonomous agent identity. Every observation — text output, tool call, and memory write — is scored across multiple drift components against a verified behavioral baseline. When drift crosses defined thresholds, enforcement is automatic: tool calls are blocked, memory writes are suspended, and every action is written to an immutable audit record. I built the entire system independently, prior to my doctoral program.`,
     quote: "Agentic AI doesn't fail by hallucinating. It fails by drifting.",
-    screenshots: [
-      { src: '/bridgetos/console-agent.png', label: 'Agent Identity Console' },
-      { src: '/bridgetos/console-overview.png', label: 'Dashboard Overview' },
-      { src: '/bridgetos/console-heatmap.png', label: 'HDIT Drift Monitor' },
-      { src: '/bridgetos/console-audit.png', label: 'Operations Console' },
-    ],
     stack: ['React', 'Vite', 'Tailwind CSS', 'FastAPI', 'MongoDB', 'WebSocket'],
     features: [
       { title: 'Identity Drift Detection', description: 'Every observation is scored across semantic, stylistic, affective, and risk dimensions against the agent\'s verified behavioral baseline. A composite drift index is updated continuously.', icon: 'TrendingUp' },
