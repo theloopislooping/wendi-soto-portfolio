@@ -76,7 +76,7 @@ body {
   background-color: var(--color-background);
   background-image: url('/linen-texture.png');
   background-repeat: repeat;
-  background-size: 512px;
+  background-size: 256px;
   color: var(--color-foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
