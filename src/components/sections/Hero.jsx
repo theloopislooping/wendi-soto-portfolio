@@ -6,21 +6,8 @@ import { personal } from '../../data/personal'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Floral decorations */}
-      <img
-        src="/florals/image2.png"
-        alt=""
-        className="absolute top-16 left-0 w-40 sm:w-64 pointer-events-none animate-sway"
-      />
-      <img
-        src="/florals/image01.png"
-        alt=""
-        className="absolute bottom-16 right-0 w-40 sm:w-64 pointer-events-none animate-sway"
-        style={{ animationDelay: '-3s' }}
-      />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-40">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-64">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,15 +49,14 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground-dim hover:text-sage-dark transition-colors"
-      >
-        <ChevronDown size={24} className="animate-bounce" />
-      </motion.a>
+      <motion.img
+        src="/embroidery-flowers.png"
+        alt="Embroidered wildflower garden"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="absolute bottom-0 left-0 w-full pointer-events-none"
+      />
     </section>
   )
 }

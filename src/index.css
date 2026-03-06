@@ -74,6 +74,9 @@ html {
 body {
   margin: 0;
   background-color: var(--color-background);
+  background-image: url('/linen-texture.png');
+  background-repeat: repeat;
+  background-size: 300px;
   color: var(--color-foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -117,78 +120,6 @@ body {
 ::selection {
   background: var(--color-sage-light);
   color: var(--color-foreground);
-}
-
-/* Dark mode overrides */
-[data-theme="dark"] {
-  --color-background: #1a1a17;
-  --color-background-alt: #222220;
-  --color-surface: rgba(255, 255, 255, 0.04);
-  --color-surface-hover: rgba(255, 255, 255, 0.08);
-  --color-foreground: #f2ede4;
-  --color-foreground-muted: #c4bfb6;
-  --color-foreground-dim: #8a857d;
-
-  --color-sage: #8fa076;
-  --color-sage-light: #5a6b4a;
-  --color-sage-dark: #b8c9a2;
-
-  --color-pink: #c9969a;
-  --color-pink-light: #8b6264;
-  --color-pink-dark: #e0b5b8;
-
-  --color-warm: #b89a5e;
-  --color-cream: #2a2924;
-}
-
-[data-theme="dark"] .glass {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(163, 177, 138, 0.18);
-}
-
-[data-theme="dark"] .glass-heavy {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(163, 177, 138, 0.25);
-}
-
-[data-theme="dark"] .glass-light {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(163, 177, 138, 0.12);
-}
-
-[data-theme="dark"] .bg-white\/5,
-[data-theme="dark"] .bg-white\/50 {
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .bg-white\/40 {
-  background: rgba(255, 255, 255, 0.08) !important;
-}
-
-[data-theme="dark"] .bg-white\/60 {
-  background: rgba(255, 255, 255, 0.12) !important;
-}
-
-[data-theme="dark"] .bg-white\/25 {
-  background: rgba(255, 255, 255, 0.04) !important;
-}
-
-[data-theme="dark"] .bg-white\/35 {
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-
-[data-theme="dark"] .border-white\/10,
-[data-theme="dark"] .border-sage\/15,
-[data-theme="dark"] .border-sage\/10,
-[data-theme="dark"] .border-sage\/12 {
-  border-color: rgba(163, 177, 138, 0.2) !important;
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(163, 177, 138, 0.15) !important;
-  color: var(--color-foreground) !important;
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }

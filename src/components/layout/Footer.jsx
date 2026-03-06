@@ -3,7 +3,7 @@ import { personal } from '../../data/personal'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-sage/10 bg-background-alt">
+    <footer className="border-t border-sage/10 bg-white/50 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-foreground-dim text-sm">
           &copy; {new Date().getFullYear()} {personal.name}

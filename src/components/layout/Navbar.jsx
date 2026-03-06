@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router'
 import { motion } from 'motion/react'
 import { Menu, X, ArrowLeft } from 'lucide-react'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
-import ThemeToggle from '../ui/ThemeToggle'
 import { cn } from '../../lib/cn'
 
 const NAV_ITEMS = [
@@ -103,7 +102,6 @@ export default function Navbar() {
         )}
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           {isHome && (
             <button
               className="md:hidden text-foreground-muted hover:text-foreground transition-colors"

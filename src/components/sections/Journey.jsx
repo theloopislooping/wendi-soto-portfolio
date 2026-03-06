@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import GlassCard from '../ui/GlassCard'
 import SectionHeading from '../ui/SectionHeading'
 import ConfessionsGallery from '../ui/ConfessionsGallery'
 
@@ -55,6 +56,7 @@ export default function Journey() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading subtitle="The path looks nonlinear. The question has been constant.">Journey</SectionHeading>
 
+        <GlassCard hover={false} className="p-6 sm:p-8">
         <div className="relative">
           {/* Vertical line */}
           <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-sage/20" />
@@ -96,6 +98,7 @@ export default function Journey() {
             ))}
           </div>
         </div>
+        </GlassCard>
       </div>
     </section>
   )
