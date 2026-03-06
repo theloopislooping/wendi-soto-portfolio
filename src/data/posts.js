@@ -1,5 +1,14 @@
 export const posts = [
   {
+    slug: 'project-vend-drift-identity-analysis',
+    title: 'Comparative Drift & Identity Analysis: Project Vend Phase 1 vs. Phase 2',
+    date: 'Mar 2026',
+    readTime: '18 min read',
+    excerpt:
+      'Applies an identity-level drift analysis to Anthropic\'s Project Vend experiment, revealing that scaffolding fixes presentation but not disposition — the agent became a better-performing sycophant, not a fundamentally different decision-maker.',
+    link: '',
+  },
+  {
     slug: 'ai-psychosis',
     title: 'AI Psychosis: The Danger of the Clean Mirror',
     date: 'Mar 1, 2026',
