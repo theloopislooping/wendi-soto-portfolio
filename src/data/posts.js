@@ -6,7 +6,7 @@ export const posts = [
     readTime: '18 min read',
     excerpt:
       'Applies an identity-level drift analysis to Anthropic\'s Project Vend experiment, revealing that scaffolding fixes presentation but not disposition — the agent became a better-performing sycophant, not a fundamentally different decision-maker.',
-    link: '/ProjectVend_Drift_Identity_Analysis.pdf',
+    link: '',
   },
   {
     slug: 'ai-psychosis',
