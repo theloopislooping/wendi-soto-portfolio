@@ -1,0 +1,21 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;family=Inter:wght@400;500&amp;display=swap');
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#F4EED8"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#A3B18A"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#E8B4B8"/>
+  <text x="80" y="200" font-family="'Playfair Display', Georgia, serif" font-weight="600" font-size="64" fill="#3D3B38">Wendi Kimberli Soto</text>
+  <text x="80" y="260" font-family="'Inter', sans-serif" font-weight="500" font-size="22" fill="#7C8E6B" letter-spacing="3">FOUNDER &amp; PHD RESEARCHER</text>
+  <line x1="80" y1="290" x2="320" y2="290" stroke="#A3B18A" stroke-width="2"/>
+  <text x="80" y="340" font-family="'Inter', sans-serif" font-weight="400" font-size="26" fill="#5C5950">Building governance systems that detect</text>
+  <text x="80" y="376" font-family="'Inter', sans-serif" font-weight="400" font-size="26" fill="#5C5950">when AI agents drift from who they're</text>
+  <text x="80" y="412" font-family="'Inter', sans-serif" font-weight="400" font-size="26" fill="#5C5950">supposed to be.</text>
+  <text x="80" y="530" font-family="'Inter', sans-serif" font-weight="400" font-size="18" fill="#807B73">wendiksoto.com</text>
+  <text x="80" y="560" font-family="'Inter', sans-serif" font-weight="400" font-size="16" fill="#807B73">King's College London  |  2 Patents Pending  |  BridgetOS</text>
+  <circle cx="1060" cy="315" r="120" fill="#A3B18A" opacity="0.12"/>
+  <circle cx="1100" cy="260" r="80" fill="#E8B4B8" opacity="0.15"/>
+  <circle cx="1020" cy="390" r="60" fill="#C9A96E" opacity="0.12"/>
+</svg>
