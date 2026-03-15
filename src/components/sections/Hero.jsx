@@ -29,6 +29,15 @@ export default function Hero() {
           </span>
         </motion.h1>
 
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-foreground-muted text-base sm:text-lg max-w-xl mx-auto mb-6 leading-relaxed"
+        >
+          Building governance systems that detect when AI agents drift from who they're supposed to be.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -49,14 +58,20 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.img
-        src="/embroidery-flowers.png"
-        alt="Embroidered wildflower garden"
+      <motion.picture
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
         className="absolute bottom-0 left-0 w-full pointer-events-none"
-      />
+      >
+        <source srcSet="/embroidery-flowers.webp" type="image/webp" />
+        <img
+          src="/embroidery-flowers.png"
+          alt="Embroidered wildflower garden"
+          className="w-full"
+          loading="eager"
+        />
+      </motion.picture>
     </section>
   )
 }
