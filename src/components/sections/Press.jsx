@@ -3,15 +3,7 @@ import { Newspaper, ArrowUpRight, Clock } from 'lucide-react'
 import GlassCard from '../ui/GlassCard'
 import SectionHeading from '../ui/SectionHeading'
 
-const mentions = [
-  {
-    title: 'AI Identity Drift and Governance in Autonomous Systems',
-    outlet: "O'Reilly Radar",
-    date: '2026',
-    status: 'under-review',
-    link: '',
-  },
-]
+const mentions = []
 
 export default function Press() {
   if (mentions.length === 0) return null
