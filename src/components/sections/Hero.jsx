@@ -33,7 +33,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-foreground-muted text-base sm:text-lg max-w-xl mx-auto mb-6 leading-relaxed"
+          className="text-lavender-dark text-base sm:text-lg max-w-xl mx-auto mb-6 leading-relaxed"
         >
           Building governance systems that detect when AI agents drift from who they're supposed to be.
         </motion.p>
