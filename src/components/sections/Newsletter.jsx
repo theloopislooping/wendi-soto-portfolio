@@ -37,7 +37,7 @@ export default function Newsletter() {
           transition={{ duration: 0.5 }}
         >
           <GlassCard hover={false} className="p-8 text-center">
-            <div className="p-2.5 rounded-lg bg-sage/15 text-sage-dark inline-block mb-4">
+            <div className="p-2.5 rounded-lg bg-pink/10 text-pink inline-block mb-4">
               <Mail size={22} />
             </div>
             <h3 className="font-serif text-xl font-medium text-foreground mb-2">
@@ -63,12 +63,12 @@ export default function Newsletter() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="flex-1 bg-white/60 border border-sage/15 rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground-dim focus:outline-none focus:border-sage/40 transition-colors"
+                  className="flex-1 bg-white/5 border border-white/8 rounded-xl px-4 py-3 text-sm text-foreground placeholder-foreground-dim focus:outline-none focus:border-white/15 transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="px-6 py-3 rounded-full font-medium text-sm bg-pink text-white hover:bg-pink-dark hover:shadow-md transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+                  className="px-6 py-3 rounded-full font-medium text-sm bg-pink-dark text-white hover:bg-pink hover:shadow-md hover:shadow-pink/20 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
                 >
                   {status === 'sending' ? 'Subscribing...' : 'Subscribe'}
                 </button>

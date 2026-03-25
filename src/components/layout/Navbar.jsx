@@ -48,13 +48,13 @@ export default function Navbar() {
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
       <div className="glass-heavy rounded-full px-6 py-3 flex items-center gap-8 shadow-md">
         {isHome ? (
-          <a href="#hero" className="font-serif text-base font-medium text-foreground whitespace-nowrap">
+          <a href="#hero" className="font-serif text-base font-medium whitespace-nowrap gradient-text">
             Wendi Kimberli
           </a>
         ) : (
           <Link to="/" className="flex items-center gap-2 text-foreground-muted hover:text-foreground transition-colors no-underline">
             <ArrowLeft size={14} />
-            <span className="font-serif text-base font-medium text-foreground whitespace-nowrap">Wendi Kimberli</span>
+            <span className="font-serif text-base font-medium whitespace-nowrap gradient-text">Wendi Kimberli</span>
           </Link>
         )}
 
@@ -64,7 +64,7 @@ export default function Navbar() {
             <div ref={navRef} className="hidden md:flex items-center gap-1 relative">
               {/* Sliding pill */}
               <motion.div
-                className="absolute top-1/2 -translate-y-1/2 h-8 rounded-full bg-sage/12"
+                className="absolute top-1/2 -translate-y-1/2 h-8 rounded-full bg-pink/8"
                 animate={{
                   left: pillStyle.left,
                   width: pillStyle.width,
@@ -83,7 +83,7 @@ export default function Navbar() {
                   className={cn(
                     'relative z-10 px-3 py-1 text-sm font-medium transition-all duration-200 no-underline',
                     activeId === item.id
-                      ? 'text-sage-dark'
+                      ? 'text-pink'
                       : 'text-foreground-muted hover:text-foreground hover:scale-110'
                   )}
                 >
@@ -91,7 +91,7 @@ export default function Navbar() {
                   {activeId === item.id && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-sage-dark"
+                      className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-pink"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -128,8 +128,8 @@ export default function Navbar() {
               className={cn(
                 'text-sm font-medium transition-colors px-3 py-2 rounded-xl no-underline',
                 activeId === item.id
-                  ? 'text-sage-dark bg-sage/10'
-                  : 'text-foreground-muted hover:text-foreground hover:bg-white/30'
+                  ? 'text-pink bg-pink/8'
+                  : 'text-foreground-muted hover:text-foreground hover:bg-white/8'
               )}
             >
               {item.label}

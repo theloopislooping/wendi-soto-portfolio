@@ -64,7 +64,7 @@ export default function PortalPage() {
         >
           <Link
             to="/home"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-sage/30 bg-white/50 backdrop-blur-sm text-sage-dark font-medium text-sm tracking-wide hover:bg-white/70 hover:border-sage/50 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/8 bg-white/4 backdrop-blur-sm text-sage-dark font-medium text-sm tracking-wide hover:bg-white/8 hover:border-white/15 transition-all duration-300"
           >
             Enter
           </Link>

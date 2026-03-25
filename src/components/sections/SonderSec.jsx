@@ -42,7 +42,7 @@ export default function SonderSec() {
               href="https://sondersec.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-5 px-5 py-2 rounded-full border border-pink/25 bg-white/40 text-pink-dark text-sm font-medium hover:bg-white/60 hover:border-pink/40 transition-all no-underline"
+              className="inline-flex items-center gap-1.5 mt-5 px-5 py-2 rounded-full border border-pink/20 bg-white/4 text-pink-dark text-sm font-medium hover:bg-white/8 hover:border-pink/30 transition-all no-underline"
             >
               <ExternalLink size={13} />
               Visit sondersec.org

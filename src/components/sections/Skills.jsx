@@ -23,8 +23,9 @@ export default function Skills() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {skillCategories.map((cat) => {
+          {skillCategories.map((cat, i) => {
             const Icon = iconMap[cat.icon]
+            const colors = ['bg-pink/10 text-pink', 'bg-violet/10 text-violet', 'bg-sage/15 text-sage-dark']
             return (
               <motion.div
                 key={cat.title}
@@ -33,7 +34,7 @@ export default function Skills() {
                 <GlassCard className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     {Icon && (
-                      <div className="p-2 rounded-lg bg-sage/15 text-sage-dark">
+                      <div className={`p-2 rounded-lg ${colors[i % 3]}`}>
                         <Icon size={18} />
                       </div>
                     )}

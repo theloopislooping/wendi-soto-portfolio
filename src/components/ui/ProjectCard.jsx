@@ -16,11 +16,11 @@ export default function ProjectCard({ slug, title, tagline, description, stack, 
         <div className="relative pb-3">
           {/* Bottom stack layer */}
           <div
-            className="absolute bottom-0 left-3 right-3 h-full rounded-2xl border border-sage/10 bg-white/25 backdrop-blur-sm"
+            className="absolute bottom-0 left-3 right-3 h-full rounded-2xl border border-white/4 bg-white/2 backdrop-blur-sm"
           />
           {/* Middle stack layer */}
           <div
-            className="absolute bottom-1.5 left-1.5 right-1.5 h-full rounded-2xl border border-sage/12 bg-white/35 backdrop-blur-sm"
+            className="absolute bottom-1.5 left-1.5 right-1.5 h-full rounded-2xl border border-white/5 bg-white/3 backdrop-blur-sm"
           />
           {/* Main card */}
           <GlassCard className="p-6 relative overflow-hidden">
@@ -46,7 +46,7 @@ export default function ProjectCard({ slug, title, tagline, description, stack, 
                 <TechBadge key={t}>{t}</TechBadge>
               ))}
             </div>
-            <div className="flex items-center gap-1 text-sage-dark text-sm font-medium group-hover:gap-2 transition-all">
+            <div className="flex items-center gap-1 text-pink text-sm font-medium group-hover:gap-2 transition-all">
               View Details <ArrowRight size={14} />
             </div>
           </GlassCard>

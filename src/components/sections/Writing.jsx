@@ -23,7 +23,7 @@ export default function Writing() {
             >
               <GlassCard className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-sage/15 text-sage-dark shrink-0 mt-1">
+                  <div className={`p-2 rounded-lg shrink-0 mt-1 ${i % 2 === 0 ? 'bg-pink/10 text-pink' : 'bg-violet/10 text-violet'}`}>
                     <PenLine size={20} />
                   </div>
                   <div className="flex-1">
@@ -41,7 +41,7 @@ export default function Writing() {
                         href={post.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sage-dark text-sm font-medium mt-3 hover:text-sage transition-colors no-underline"
+                        className="inline-flex items-center gap-1 text-pink text-sm font-medium mt-3 hover:text-pink-light transition-colors no-underline"
                       >
                         Read essay <ArrowUpRight size={14} />
                       </a>

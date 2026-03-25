@@ -39,7 +39,7 @@ export default function Press() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sage-dark text-sm font-medium hover:text-sage transition-colors no-underline"
+                        className="inline-flex items-center gap-1 text-pink text-sm font-medium hover:text-pink-light transition-colors no-underline"
                       >
                         Read article <ArrowUpRight size={14} />
                       </a>

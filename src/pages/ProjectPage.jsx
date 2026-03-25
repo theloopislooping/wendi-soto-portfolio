@@ -71,7 +71,7 @@ export default function ProjectPage({ project }) {
                   href={project.links.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 ml-2 px-4 py-1.5 rounded-full border border-sage/25 bg-white/40 text-sage-dark text-xs font-medium hover:bg-white/60 hover:border-sage/40 transition-all no-underline"
+                  className="inline-flex items-center gap-1.5 ml-2 px-4 py-1.5 rounded-full border border-white/8 bg-white/4 text-sage-dark text-xs font-medium hover:bg-white/8 hover:border-white/15 transition-all no-underline"
                 >
                   <ExternalLink size={12} />
                   Visit Site
@@ -304,7 +304,7 @@ export default function ProjectPage({ project }) {
             {prev ? (
               <Link
                 to={`/projects/${prev.slug}`}
-                className="flex items-center gap-2 text-foreground-muted hover:text-sage-dark transition-colors no-underline"
+                className="flex items-center gap-2 text-foreground-muted hover:text-pink transition-colors no-underline"
               >
                 <ArrowLeft size={16} />
                 <span className="text-sm">{prev.title}</span>
@@ -321,7 +321,7 @@ export default function ProjectPage({ project }) {
             {next ? (
               <Link
                 to={`/projects/${next.slug}`}
-                className="flex items-center gap-2 text-foreground-muted hover:text-sage-dark transition-colors no-underline"
+                className="flex items-center gap-2 text-foreground-muted hover:text-pink transition-colors no-underline"
               >
                 <span className="text-sm">{next.title}</span>
                 <ArrowRight size={16} />

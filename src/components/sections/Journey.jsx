@@ -73,7 +73,7 @@ export default function Journey() {
               >
                 {/* Dot */}
                 <div
-                  className="absolute left-2.5 sm:left-4.5 top-1.5 w-3 h-3 rounded-full border-2 border-white"
+                  className="absolute left-2.5 sm:left-4.5 top-1.5 w-3 h-3 rounded-full border-2 border-background"
                   style={{ background: item.color }}
                 />
 
@@ -85,7 +85,7 @@ export default function Journey() {
                     href={item.link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-3 text-sage-dark text-sm font-medium hover:underline"
+                    className="inline-block mt-3 text-pink text-sm font-medium hover:text-pink-light transition-colors"
                   >
                     {item.link.label} &rarr;
                   </a>

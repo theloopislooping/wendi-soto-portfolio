@@ -29,7 +29,7 @@ export default function Thesis() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={
                   i === paragraphs.length - 1
-                    ? 'font-serif text-xl font-medium text-foreground'
+                    ? 'font-serif text-xl font-medium gradient-text'
                     : 'text-foreground-muted leading-relaxed'
                 }
               >

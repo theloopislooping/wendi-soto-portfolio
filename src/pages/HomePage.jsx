@@ -12,6 +12,10 @@ import Skills from '../components/sections/Skills'
 import Newsletter from '../components/sections/Newsletter'
 import Contact from '../components/sections/Contact'
 
+function Divider() {
+  return <div className="section-divider" />
+}
+
 export default function HomePage() {
   useEffect(() => {
     document.title = 'Wendi Kimberli Soto — AI Governance & Identity Drift Detection'
@@ -21,13 +25,20 @@ export default function HomePage() {
     <>
       <Hero />
       <Thesis />
+      <Divider />
       <About />
+      <Divider />
       <Now />
+      <Divider />
       <Journey />
+      <Divider />
       <Writing />
       <Press />
+      <Divider />
       <Recognition />
+      <Divider />
       <Projects />
+      <Divider />
       <Skills />
       <Newsletter />
       <Contact />

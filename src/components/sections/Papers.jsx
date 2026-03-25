@@ -35,7 +35,7 @@ export default function Papers() {
                         href={paper.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sage-dark text-sm font-medium mt-3 hover:text-sage transition-colors no-underline"
+                        className="inline-flex items-center gap-1 text-pink text-sm font-medium mt-3 hover:text-pink-light transition-colors no-underline"
                       >
                         Read Paper <ArrowUpRight size={14} />
                       </a>

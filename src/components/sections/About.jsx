@@ -6,12 +6,18 @@ import SectionHeading from '../ui/SectionHeading'
 import { personal } from '../../data/personal'
 
 const highlights = [
-  { icon: FlaskConical, label: 'PhD Research', description: 'Adaptive cybersecurity education, recursive feedback architectures, and human-AI co-evolution in training environments at King\'s College London' },
-  { icon: Brain, label: 'Cognitive AI', description: 'Real-time user cognition modeling that adapts to anxiety, cognitive load, and learning style to support durable behavioural change', pink: true },
-  { icon: Repeat, label: 'Human-AI Co-Evolution', description: 'Designing systems where humans and AI develop together — not AI that replaces human thinking, but AI that strengthens it' },
-  { icon: Shield, label: 'AI Governance', description: 'Identity governance, drift detection, and behavioral stability in agentic AI — keeping humans thinking critically alongside AI systems' },
-  { icon: Heart, label: 'SonderSec', description: 'Trauma-informed cybersecurity training and tools for marginalised communities facing disproportionate digital risk', pink: true },
+  { icon: FlaskConical, label: 'PhD Research', description: 'Adaptive cybersecurity education, recursive feedback architectures, and human-AI co-evolution in training environments at King\'s College London', color: 'violet' },
+  { icon: Brain, label: 'Cognitive AI', description: 'Real-time user cognition modeling that adapts to anxiety, cognitive load, and learning style to support durable behavioural change', color: 'rose' },
+  { icon: Repeat, label: 'Human-AI Co-Evolution', description: 'Designing systems where humans and AI develop together — not AI that replaces human thinking, but AI that strengthens it', color: 'sage' },
+  { icon: Shield, label: 'AI Governance', description: 'Identity governance, drift detection, and behavioral stability in agentic AI — keeping humans thinking critically alongside AI systems', color: 'violet' },
+  { icon: Heart, label: 'SonderSec', description: 'Trauma-informed cybersecurity training and tools for marginalised communities facing disproportionate digital risk', color: 'rose' },
 ]
+
+const colorMap = {
+  sage: 'bg-sage/15 text-sage-dark',
+  rose: 'bg-pink/10 text-pink',
+  violet: 'bg-violet/10 text-violet',
+}
 
 export default function About() {
   const [expanded, setExpanded] = useState(false)
@@ -34,7 +40,7 @@ export default function About() {
                 <img
                   src="/headshot.png"
                   alt="Wendi Kimberli"
-                  className="w-40 h-40 rounded-2xl object-cover border-2 border-pink-light/50 shadow-sm shrink-0"
+                  className="w-40 h-40 rounded-2xl object-cover border border-white/10 shadow-sm shrink-0"
                 />
                 <p className="text-foreground-muted leading-relaxed text-lg">
                   {personal.bio[0]}
@@ -65,9 +71,9 @@ export default function About() {
 
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="mt-4 inline-flex items-center gap-1.5 text-sage-dark text-sm font-medium tracking-wide hover:opacity-75 transition-opacity cursor-pointer bg-transparent border-none p-0"
+                className="mt-4 inline-flex items-center gap-1.5 text-pink text-sm font-medium tracking-wide hover:text-pink-light transition-colors cursor-pointer bg-transparent border-none p-0"
               >
-                <span className="border-b border-sage-dark/40">
+                <span className="border-b border-pink/40">
                   {expanded ? 'Read less' : 'Read more'}
                 </span>
                 {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -85,7 +91,7 @@ export default function About() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
                 <GlassCard className="p-5 flex items-start gap-4">
-                  <div className={`p-2 rounded-lg shrink-0 ${h.pink ? 'bg-pink/15 text-pink-dark' : 'bg-sage/15 text-sage-dark'}`}>
+                  <div className={`p-2 rounded-lg shrink-0 ${colorMap[h.color]}`}>
                     <h.icon size={20} />
                   </div>
                   <div>

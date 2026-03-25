@@ -40,7 +40,7 @@ export default function Contact() {
                       href={link.href}
                       target={link.label !== 'Email' ? '_blank' : undefined}
                       rel={link.label !== 'Email' ? 'noopener noreferrer' : undefined}
-                      className="flex items-center gap-3 text-foreground-muted hover:text-sage-dark transition-colors"
+                      className="flex items-center gap-3 text-foreground-muted hover:text-pink transition-colors"
                     >
                       <link.icon size={18} />
                       <span className="text-sm">{link.value}</span>

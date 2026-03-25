@@ -33,9 +33,9 @@ export default function Recognition() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <GlassCard hover={false} className="p-6 border-amber-300/30 bg-amber-50/30">
+          <GlassCard hover={false} className="p-6 border-warm/20 bg-warm/5">
             <div className="flex items-start gap-4">
-              <div className="p-2 rounded-lg bg-amber-100/60 text-amber-700 shrink-0 mt-0.5">
+              <div className="p-2 rounded-lg bg-warm/15 text-warm shrink-0 mt-0.5">
                 <Trophy size={20} />
               </div>
               <div>
@@ -76,7 +76,7 @@ export default function Recognition() {
                     href="https://www.kclsu.org/resources/kclsu/AI-MANIFESTO/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sage-dark hover:underline"
+                    className="text-pink hover:text-pink-light transition-colors"
                   >
                     Read manifesto
                   </a>

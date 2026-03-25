@@ -7,13 +7,13 @@ const current = [
     status: 'In progress',
     title: 'PhD at King\'s College London',
     description: 'Finishing up my systematic literature review. Researching adaptive cybersecurity education, recursive feedback architectures, and human-AI co-evolution in training environments.',
-    color: '#A3B18A',
+    color: '#E88B9C',
   },
   {
     status: 'In progress',
     title: 'BridgetOS Full Patent Filing',
     description: 'Filing the full patent for BridgetOS before April 13, 2026 — identity governance, drift detection, and behavioral stability in agentic AI systems.',
-    color: '#6366f1',
+    color: '#A78BFA',
   },
 ]
 
